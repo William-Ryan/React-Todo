@@ -5,14 +5,17 @@ import React from "react"
 import Todo from "./Todo"
 
 export default function TodoList(props){
+    console.log(props)
+
+    const state = count => {
+        count = this.props.items.value
+    }
+
     return (
         <div className="todo-list">
             {props.items.map(item => (
                 <Todo key={item.id} item={item} toggleItem={props.toggleItem} />
             ))}
-            <button className="clear-btn" onClick={props.clearPurchased}>
-                Clear Password
-            </button>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import './styles.css'
 
 const items = [
     {
@@ -11,7 +11,7 @@ const items = [
     },
     {
         task: 'Wash Dishes',
-        id: 230,
+        id: 231,
         completed: false 
     }
 ];
@@ -52,14 +52,25 @@ class App extends React.Component {
         });
     };
 
+    itemDelete = () => {
+      const resetList = this.state.itemsList.filter(items => !items.completed)
+
+      this.setState({
+        itemsList: resetList
+      })
+    }
+
     render() {
         return (
             <div className="App">
                 <div className="header">
                   <h1>Shopping List</h1>
-                  <TodoForm addNewItem={this.addNewItem} />
+                  <TodoForm addNewItem={this.addNewItem} 
+                    itemDelete={this.itemDelete}
+                  />
                 </div>
-                  <TodoList items={this.state.itemsList} 
+                  <TodoList 
+                    items={this.state.itemsList} 
                     toggleItem={this.toggleItem}
                   />
             </div>
