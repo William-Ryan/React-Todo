@@ -56,12 +56,12 @@ class App extends React.Component {
         return (
             <div className="App">
                 <div className="header">
-                    <h1>Shopping List</h1>
-                    <TodoForm addNewItem={this.addNewItem} />
+                  <h1>Shopping List</h1>
+                  <TodoForm addNewItem={this.addNewItem} />
                 </div>
-                    <TodoList items={this.state.itemsList} 
+                  <TodoList items={this.state.itemsList} 
                     toggleItem={this.toggleItem}
-                />
+                  />
             </div>
         );
     }
