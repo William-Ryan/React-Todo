@@ -5,11 +5,7 @@ import React from "react"
 import Todo from "./Todo"
 
 export default function TodoList(props){
-    console.log(props)
-
-    const state = count => {
-        count = this.props.items.value
-    }
+    console.log(props.items)
 
     return (
         <div className="todo-list">

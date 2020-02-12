@@ -6,12 +6,12 @@ import './styles.css'
 const items = [
     {
         task: 'Do Laundry',
-        id: 230,
+        id: 231,
         completed: false
     },
     {
         task: 'Wash Dishes',
-        id: 231,
+        id: 232,
         completed: false 
     }
 ];
@@ -43,7 +43,7 @@ class App extends React.Component {
 
     addNewItem = itemText => {
         const newItem = {
-            name: itemText,
+            task: itemText,
             id: Date.now(),
             purchased: false
         };
@@ -64,8 +64,9 @@ class App extends React.Component {
         return (
             <div className="App">
                 <div className="header">
-                  <h1>Shopping List</h1>
-                  <TodoForm addNewItem={this.addNewItem} 
+                  <h1>Todo List</h1>
+                  <TodoForm 
+                    addNewItem={this.addNewItem} 
                     itemDelete={this.itemDelete}
                   />
                 </div>
